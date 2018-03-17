@@ -22,6 +22,8 @@ function enable() {
 
     }
 
+    this.power.prototype._sync = this.power._sync;
+
     this.power._sync();
 }
 
