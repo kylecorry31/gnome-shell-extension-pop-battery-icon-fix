@@ -14,16 +14,15 @@ function enable() {
 
     this.power._sync = function(){
       this._oldSync();
-
       if(this._proxy.IsPresent){
           icon = this.getIcon(this._proxy.Percentage, this._proxy.State == UPower.DeviceState.CHARGING);
 
           this._indicator.icon_name = icon;
           this._item.icon.icon_name = icon;
       }
-    }
+    };
 
-    this.power.prototype._sync = this.power._sync;
+    // this.power.prototype._sync = this.power._sync;
 
     this.power._sync();
 }
@@ -44,7 +43,7 @@ function getIcon(percentage, charging){
 
 function disable() {
     this.power._sync = this.power._oldSync;
-    this.power.prototype._sync = this.power._sync;
+    // this.power.prototype._sync = this.power._sync;
     this.power._oldSync = undefined;
     this.power.getIcon = undefined;
     this.power._sync();
