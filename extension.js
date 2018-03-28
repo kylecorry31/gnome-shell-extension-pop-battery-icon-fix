@@ -43,6 +43,7 @@ function getIcon(percentage, charging){
 
 function disable() {
     this.power._sync = this.power._oldSync;
+    this.power.prototype._sync = this.power._sync;
     this.power._oldSync = undefined;
     this.power.getIcon = undefined;
     this.power._sync();
