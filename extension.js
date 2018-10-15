@@ -58,6 +58,6 @@ function getIcon(percentage, charging){
 
 
 function disable() {
-    this.power._sync = old;
-    this.power._sync();
+    Main.panel.statusArea.aggregateMenu._power._sync = old;
+    Main.panel.statusArea.aggregateMenu._power._sync();
 }
